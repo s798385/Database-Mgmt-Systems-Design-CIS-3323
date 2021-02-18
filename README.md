@@ -22,6 +22,7 @@ Students at your hometown high school have decided to organize their social netw
 * **Rating ( rID, mID, stars, ratingDate ):** the reviewer rID gave the movie mID a number of stars rating (1-5) on a certain ratingDate. 
 
 The following graph shows the various connections between the students in our database. 9th graders are blue, 10th graders are green, 11th graders are yellow, and 12th graders are purple. Undirected black edges indicate friendships, and directed red edges indicate that one student likes another student.
+
 <img src="https://github.com/sbunivedu/db_example_database/blob/master/images/social.png">
 
 ## How to Experiment
