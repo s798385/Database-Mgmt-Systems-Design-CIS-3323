@@ -1,6 +1,6 @@
 # Database Mgmt Systems Design (CIS-3323)
 
-# Example Databases
+## Example Databases
 The repository contains scripts for creating two example database.
 
 ## Battleships Database
