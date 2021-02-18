@@ -22,5 +22,7 @@ The following graph shows the various connections between the students in our da
 * **Reviewer (rID, name ):** the reviewer with ID number rID has a certain name. 
 * **Rating ( rID, mID, stars, ratingDate ):** the reviewer rID gave the movie mID a number of stars rating (1-5) on a certain ratingDate. 
 
+<img src="https://github.com/sbunivedu/db_example_database/blob/master/images/social.png">
+
 ## How to Experiment
 Got to https://sqliteonline.com/ and click on "Click to connect" under "MariaDB". Select a script (`.sql` file) you want and copy-paste the content to the "script tab" on https://sqliteonline.com/. Click on the "Run" button to execute the script, which creates and populates the example database. Then, you can open another "script tab" to run SQL queries on this database.
