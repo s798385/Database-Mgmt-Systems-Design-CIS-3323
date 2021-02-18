@@ -4,7 +4,7 @@ The repository contains scripts for creating two example database.
 ## Battleships Database
 This World War II capital ships database has the following schema:
 
-**Ships(name, class, launched):** This relation records the name of the ship, the name of its class, and the year in which the ship was launched. Ships are built in "classes" from the same design, and the class is usually named for the first ship of that class.
+* **Ships(name, class, launched):** This relation records the name of the ship, the name of its class, and the year in which the ship was launched. Ships are built in "classes" from the same design, and the class is usually named for the first ship of that class.
 **Classes(class, type, country, numGuns, bore, displacement):** This relation records the name of the class, the type ('bb' for battleship and 'bc' for battlecruiser), the country that built the ship, the number of main guns, the bore (diameter of the gun barrel, in inches) of the main guns, and the displacement (weight, in tons).
 **Battles(name, date):** This relation gives the name and date of battles.
 **Outcomes(ship, battle, result):** This relation gives the result (sunk, damaged, or ok) for each ship in each battle.
