@@ -15,13 +15,13 @@ Students at your hometown high school have decided to organize their social netw
 * **Highschooler ( ID, name, grade ):** there is a high school student with unique ID and a given first name in a certain grade.
 * **Friend ( ID1, ID2 ):** the student with ID1 is friends with the student with ID2. Friendship is mutual, so if `(123, 456)` is in the Friend table, so is `(456, 123)`.
 * **Likes ( ID1, ID2 ):** the student with ID1 likes the student with ID2. Liking someone is not necessarily mutual, so if `(123, 456)` is in the Likes table, there is no guarantee that `(456, 123)` is also present.
-The following graph shows the various connections between the students in our database. 9th graders are blue, 10th graders are green, 11th graders are yellow, and 12th graders are purple. Undirected black edges indicate friendships, and directed red edges indicate that one student likes another student.
 
 ## Movies Database
 * **Movie (mID, title, year, director ):** there is a movie with ID number mID, a title, a release year, and a director. 
 * **Reviewer (rID, name ):** the reviewer with ID number rID has a certain name. 
 * **Rating ( rID, mID, stars, ratingDate ):** the reviewer rID gave the movie mID a number of stars rating (1-5) on a certain ratingDate. 
 
+The following graph shows the various connections between the students in our database. 9th graders are blue, 10th graders are green, 11th graders are yellow, and 12th graders are purple. Undirected black edges indicate friendships, and directed red edges indicate that one student likes another student.
 <img src="https://github.com/sbunivedu/db_example_database/blob/master/images/social.png">
 
 ## How to Experiment
