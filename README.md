@@ -1,5 +1,5 @@
 # Database Mgmt Systems Design (CIS-3323)
-The repository contains scripts for creating two example database.
+The repository contains scripts for creating three example database.
 
 ## Battleships Database
 This World War II capital ships database has the following schema:
