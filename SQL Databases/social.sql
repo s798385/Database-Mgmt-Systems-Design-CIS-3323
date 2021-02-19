@@ -1,60 +1,58 @@
-/* Delete the tables if they already exist */
-drop table if exists Highschooler;
-drop table if exists Friend;
-drop table if exists Likes;
+drop table if exists Movie;
+drop table if exists Reviewer;
+drop table if exists Rating;
 
-/* Create the schema for our tables */
-create table Highschooler(ID int, name varchar(50), grade int);
-create table Friend(ID1 int, ID2 int);
-create table Likes(ID1 int, ID2 int);
+CREATE TABLE `Movie` (
+  `mID` int(11) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `year` year(4) NOT NULL,
+  `directory` varchar(256) DEFAULT NULL
+);
 
-/* Populate the tables with our data */
-insert into Highschooler values (1510, 'Jordan', 9);
-insert into Highschooler values (1689, 'Gabriel', 9);
-insert into Highschooler values (1381, 'Tiffany', 9);
-insert into Highschooler values (1709, 'Cassandra', 9);
-insert into Highschooler values (1101, 'Haley', 10);
-insert into Highschooler values (1782, 'Andrew', 10);
-insert into Highschooler values (1468, 'Kris', 10);
-insert into Highschooler values (1641, 'Brittany', 10);
-insert into Highschooler values (1247, 'Alexis', 11);
-insert into Highschooler values (1316, 'Austin', 11);
-insert into Highschooler values (1911, 'Gabriel', 11);
-insert into Highschooler values (1501, 'Jessica', 11);
-insert into Highschooler values (1304, 'Jordan', 12);
-insert into Highschooler values (1025, 'John', 12);
-insert into Highschooler values (1934, 'Kyle', 12);
-insert into Highschooler values (1661, 'Logan', 12);
+INSERT INTO `Movie` (`mID`, `title`, `year`, `directory`) VALUES
+(101, 'Gone with the Wind', 1939, 'Victor Fleming'),
+(102, 'Star Wars', 1977, 'George Lucas'),
+(103, 'The Sound of Music', 1965, 'Robert Wise'),
+(104, 'E.T.', 1982, 'Steven Spielberg'),
+(105, 'Titanic', 1997, 'James Cameron'),
+(106, 'Snow White', 1937, NULL),
+(107, 'Avatar', 2009, 'James Cameron'),
+(108, 'Raiders of the Lost Ark', 1981, 'Steven Spielberg');
 
-insert into Friend values (1510, 1381);
-insert into Friend values (1510, 1689);
-insert into Friend values (1689, 1709);
-insert into Friend values (1381, 1247);
-insert into Friend values (1709, 1247);
-insert into Friend values (1689, 1782);
-insert into Friend values (1782, 1468);
-insert into Friend values (1782, 1316);
-insert into Friend values (1782, 1304);
-insert into Friend values (1468, 1101);
-insert into Friend values (1468, 1641);
-insert into Friend values (1101, 1641);
-insert into Friend values (1247, 1911);
-insert into Friend values (1247, 1501);
-insert into Friend values (1911, 1501);
-insert into Friend values (1501, 1934);
-insert into Friend values (1316, 1934);
-insert into Friend values (1934, 1304);
-insert into Friend values (1304, 1661);
-insert into Friend values (1661, 1025);
-insert into Friend select ID2, ID1 from Friend;
+CREATE TABLE `Rating` (
+  `rID` int(11) NOT NULL,
+  `mID` int(11) NOT NULL,
+  `stars` int(11) DEFAULT NULL,
+  `ratingDate` date DEFAULT NULL
+);
 
-insert into Likes values(1689, 1709);
-insert into Likes values(1709, 1689);
-insert into Likes values(1782, 1709);
-insert into Likes values(1911, 1247);
-insert into Likes values(1247, 1468);
-insert into Likes values(1641, 1468);
-insert into Likes values(1316, 1304);
-insert into Likes values(1501, 1934);
-insert into Likes values(1934, 1501);
-insert into Likes values(1025, 1101);
+INSERT INTO `Rating` (`rID`, `mID`, `stars`, `ratingDate`) VALUES
+(201, 101, 2, '2011-01-22'),
+(201, 101, 4, '2011-01-27'),
+(202, 106, 4, NULL),
+(203, 103, 2, '2011-01-20'),
+(203, 108, 4, '2011-01-12'),
+(203, 108, 2, '2011-01-30'),
+(204, 101, 3, '2011-01-09'),
+(205, 103, 3, '2011-01-27'),
+(205, 104, 2, '2011-01-22'),
+(205, 108, 4, NULL),
+(206, 107, 3, '2011-01-15'),
+(206, 106, 5, '2011-01-19'),
+(207, 107, 5, '2011-01-20'),
+(208, 104, 3, '2011-01-02');
+
+CREATE TABLE `Reviewer` (
+  `rID` int(11) NOT NULL,
+  `name` varchar(256) NOT NULL
+);
+
+INSERT INTO `Reviewer` (`rID`, `name`) VALUES
+(201, 'Sarah Martinez'),
+(202, 'Daniel Lewis'),
+(203, 'Brittany Harris'),
+(204, 'Mike Anderson'),
+(205, 'Chris Jackson'),
+(206, 'Elizabeth Thomas'),
+(207, 'James Cameron'),
+(208, 'Ashley White');
